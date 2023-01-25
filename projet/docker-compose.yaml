@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    core_api:
+        build: .
+        container_name: "mfi-api-container"
+        ports:
+            - "8080:11000"
+        volumes:
+            - ./app/:/app
+
+    db:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: password
